@@ -410,6 +410,12 @@
 	<type tag="shelter" value="yes" minzoom="15" additional="true"/>
 	<type tag="shelter" value="no" minzoom="15" additional="true"/>
 
+	<category name="gas">
+		<type tag="class" value="gas pipeline" minzoom="0" />
+		<type tag="class" value="grp" minzoom="3" />
+		<type tag="class" value="pgrp" minzoom="3" />
+	</category>
+
 	<category name="highway">
 		<type tag="highway" value="motorway" minzoom="6" nameTags="ref,int_ref"/>
 		<type tag="highway" value="motorway_link" minzoom="10" nameTags="ref,int_ref"/>
