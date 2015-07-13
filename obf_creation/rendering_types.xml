@@ -412,6 +412,12 @@
 
 	<category name="gas">
 		<type tag="class" value="gas pipeline" minzoom="0" />
+		<type tag="type" value="transit" minzoom="0" />
+		<type tag="type" value="high-pressure G1" minzoom="11" />
+		<type tag="type" value="high-pressure G2" minzoom="14" />
+		<type tag="type" value="high-pressure" minzoom="14" />
+		<type tag="type" value="average-pressure" minzoom="15" />
+		<type tag="type" value="low pressure" minzoom="16" />
 		<type tag="class" value="grp" minzoom="3" />
 		<type tag="class" value="pgrp" minzoom="3" />
 	</category>
