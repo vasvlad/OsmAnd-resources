@@ -853,6 +853,18 @@
 		<case attrColorValue="#FF0000">
 		</case>
 	</renderingAttribute>
+	<renderingAttribute name="averagePressureColor">
+		<case attrColorValue="#00FF00">
+		</case>
+	</renderingAttribute>
+	<renderingAttribute name="highPressureColor">
+		<case attrColorValue="#0000FF">
+		</case>
+	</renderingAttribute>
+	<renderingAttribute name="transitPressureColor">
+		<case attrColorValue="#989A87">
+		</case>
+	</renderingAttribute>
 
 	<!-- Forest -->
 	<renderingAttribute name="woodColor">
@@ -1665,6 +1677,7 @@
 				<case tag="public_transport" value="" order="36"/>
 			</switch>
 			<case tag="public_transport" value="" order="58"/>
+			<case tag="class" value="gas pipeline" order="96"/>
 			<!-- Over buildings -->
 			<case tag="aerialway" value="" order="96"/>
 			<case tag="aerialway" value="station" order="96"/>
@@ -6997,28 +7010,30 @@
 
 		<!-- GAS -->
 		<switch minzoom="0">
-			<case tag="class" value="gas pipeline">
+			<case tag="class" value="gas pipeline" color_0="$boundaryColorInner">
             </case>
             <apply>
-				<case additional="type=transit" color="$osmcBlackColor"/>
-				<case minzoom="15" additional="type=average-pressure" color="#00FF00"/>
+				<case additional="type=transit" color="$transitPressureColor"/>
+				<case minzoom="10" additional="type=high-pressure G1" color="$highPressureColor"/>
+				<case minzoom="10" additional="type=high-pressure G2" color="$highPressureColor"/>
+				<case minzoom="10" additional="type=high-pressure" color="$highPressureColor"/>
+				<case minzoom="15" additional="type=average-pressure" color="$averagePressureColor"/>
 				<case minzoom="16" additional="type=low pressure" color="$lowPressureColor"/>
 
 			</apply>
 
 			<apply>
-				<case maxzoom="11" strokeWidth="1:1"/>
-				<case maxzoom="12" strokeWidth="2:2"/>
-				<case maxzoom="13" strokeWidth="3.5:3.5"/>
-				<case maxzoom="14" strokeWidth="6:6"/>
-				<case minzoom="15" strokeWidth="9:9"/>
+				<case minzoom="22" additional="type=low pressure" strokeWidth="4:4"/>
+				<case minzoom="21" additional="type=low pressure" strokeWidth="3:3"/>
+				<case minzoom="20" additional="type=low pressure" strokeWidth="2:2"/>
+				<case minzoom="16" additional="type=low pressure" strokeWidth="1:1"/>
+				<case minzoom="15" strokeWidth="4:4"/>
+				<case minzoom="10" strokeWidth="4:4"/>
+				<case minzoom="8" strokeWidth="1:1"/>
+				<case minzoom="5" strokeWidth="1:1"/>
+				<case minzoom="1" strokeWidth="9:9"/>
+				<case minzoom="0" strokeWidth="9:9"/>
 			</apply>
-			<apply_if layer="1" minzoom="13" color__1="#000000">
-				<case maxzoom="13" strokeWidth__1="3.5:5"/>
-				<case maxzoom="14" strokeWidth__1="6:8"/>
-				<case minzoom="15" strokeWidth__1="9:12"/>
-				<apply_if nightMode="true" color__1="#ffffff"/>
-			</apply_if>
 		</switch>
 
 
