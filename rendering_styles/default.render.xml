@@ -1677,6 +1677,7 @@
 				<case tag="public_transport" value="" order="36"/>
 			</switch>
 			<case tag="public_transport" value="" order="58"/>
+            <!-- GAS -->
 			<case tag="class" value="gas pipeline" order="96"/>
 			<!-- Over buildings -->
 			<case tag="aerialway" value="" order="96"/>
@@ -7027,7 +7028,13 @@
 				<case minzoom="21" additional="type=low pressure" strokeWidth="3:3"/>
 				<case minzoom="20" additional="type=low pressure" strokeWidth="2:2"/>
 				<case minzoom="16" additional="type=low pressure" strokeWidth="1:1"/>
-				<case minzoom="15" strokeWidth="4:4"/>
+				<case minzoom="22" additional="type=average-pressure" strokeWidth="5:5"/>
+				<case minzoom="21" additional="type=average-pressure" strokeWidth="4:4"/>
+				<case minzoom="20" additional="type=average-pressure" strokeWidth="3:3"/>
+				<case minzoom="19" additional="type=average-pressure" strokeWidth="2:2"/>
+				<case minzoom="16" additional="type=average-pressure" strokeWidth="2:2"/>
+				<case minzoom="15" additional="type=average-pressure" strokeWidth="1:1"/>
+				<case minzoom="14" strokeWidth="4:4"/>
 				<case minzoom="10" strokeWidth="4:4"/>
 				<case minzoom="8" strokeWidth="1:1"/>
 				<case minzoom="5" strokeWidth="1:1"/>
