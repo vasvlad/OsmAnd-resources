@@ -848,6 +848,12 @@
 	<renderingConstant name="boundaryNationalParkColor" value="#a0800080"/>
 	<renderingConstant name="boundaryNationalParkColor2" value="#5009dd09"/>
 
+    <!-- GAS -->
+	<renderingAttribute name="lowPressureColor">
+		<case attrColorValue="#FF0000">
+		</case>
+	</renderingAttribute>
+
 	<!-- Forest -->
 	<renderingAttribute name="woodColor">
 		<case attrColorValue="#aed1a0">
@@ -6988,6 +6994,33 @@
 				<apply_if nightMode="true" color__1="#ffffff"/>
 			</apply_if>
 		</case>
+
+		<!-- GAS -->
+		<switch minzoom="0">
+			<case tag="class" value="gas pipeline">
+            </case>
+            <apply>
+				<case additional="type=transit" color="$osmcBlackColor"/>
+				<case minzoom="15" additional="type=average-pressure" color="#00FF00"/>
+				<case minzoom="16" additional="type=low pressure" color="$lowPressureColor"/>
+
+			</apply>
+
+			<apply>
+				<case maxzoom="11" strokeWidth="1:1"/>
+				<case maxzoom="12" strokeWidth="2:2"/>
+				<case maxzoom="13" strokeWidth="3.5:3.5"/>
+				<case maxzoom="14" strokeWidth="6:6"/>
+				<case minzoom="15" strokeWidth="9:9"/>
+			</apply>
+			<apply_if layer="1" minzoom="13" color__1="#000000">
+				<case maxzoom="13" strokeWidth__1="3.5:5"/>
+				<case maxzoom="14" strokeWidth__1="6:8"/>
+				<case minzoom="15" strokeWidth__1="9:12"/>
+				<apply_if nightMode="true" color__1="#ffffff"/>
+			</apply_if>
+		</switch>
+
 
 		<!-- Man made -->
 		<switch color="#999999">
