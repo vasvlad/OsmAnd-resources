@@ -418,8 +418,9 @@
 		<type tag="type" value="high-pressure" minzoom="14" additional="true"/>
 		<type tag="type" value="average-pressure" minzoom="15" additional="true"/>
 		<type tag="type" value="low pressure" minzoom="16" additional="true"/>
-		<type tag="class" value="grp" minzoom="3" />
-		<type tag="class" value="pgrp" minzoom="3" />
+		<type tag="class" value="grp" minzoom="10" />
+		<type tag="class" value="pgrp" minzoom="9" />
+		<type tag="class" value="tap" minzoom="9" />
 	</category>
 
 	<category name="highway">
